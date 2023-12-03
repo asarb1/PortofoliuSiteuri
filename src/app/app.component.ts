@@ -24,3 +24,4 @@ import {LinkComponent } from './link/link.component';
 
 export class AppComponent {
   title = 'Portofoliu';
+}
