@@ -4,7 +4,7 @@ import { AppTopBarComponent} from '../app-top-bar/app-top-bar.component';
 import { AppPortofoliuComponent} from '../app-portofoliu/app-portofoliu.component';
 import { ButtonComponent } from '../button/button.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-
+import { PortofoliuService } from '../portofoliu.service';
 @Component({
   standalone: true,
   selector: 'app-admin-page',
@@ -19,7 +19,7 @@ export class AdminPageComponent {
     link: new FormControl('')
   });
   submitApplication() {
-  this.housingService.submitApplication(
+  this.portofoliuService.submitApplication(
     this.applyForm.value.title ?? '',
     this.applyForm.value.description ?? '',
     this.applyForm.value.link ?? ''

@@ -4,7 +4,7 @@ import { AppTopBarComponent} from '../app-top-bar/app-top-bar.component';
 import { AppRedarePortofoliuComponent } from '../app-redare-portofoliu/app-redare-portofoliu.component';
 import { ButtonComponent } from '../button/button.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-
+import { ImagineService } from '../imagine.service';
 @Component({
   standalone: true,
   selector: 'app-edit-page',
@@ -18,7 +18,7 @@ export class EditPageComponent {
   alt: new FormControl('')
 });
 submitApplication() {
-  this.housingService.submitApplication(
+  this.imagineService.submitApplication(
     this.applyForm.value.src ?? '',
     this.applyForm.value.alt ?? ''
   );
