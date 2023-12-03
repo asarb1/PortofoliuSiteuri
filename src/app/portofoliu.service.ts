@@ -40,5 +40,9 @@ getPortofoliosById(id: number): Portofoliu | undefined {
   return this.portofoliuList.find(portofoliuList => portofoliuList.id === id);
 }
 
+submitApplication(title: string, description: string, link: string) {
+  console.log(`Homes application received: title: ${title}, description: ${description}, link: ${link}.`);
+}
+
   constructor() { }
 }

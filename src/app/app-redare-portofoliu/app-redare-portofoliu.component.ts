@@ -1,7 +1,8 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Image } from '../image';
 import { AppPictureComponent } from '../app-picture/app-picture.component';
+import { PortofoliuService } from '../portofoliu.service';
 
 @Component({
   standalone: true,
