@@ -1,6 +1,7 @@
 export interface Portofoliu {
   id: number;
-  title: String;
-  description: String;
+  imagine: String;
+  titlu: String;
+  descriere: String;
   link: String;
 }

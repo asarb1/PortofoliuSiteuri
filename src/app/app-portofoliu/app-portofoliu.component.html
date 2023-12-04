@@ -1,10 +1,9 @@
 <div class="container card-group">
-    <div class="card" style="width: 18rem;" *ngFor = "let portofoliu of portofoliuList">
-      <app-app-picture></app-app-picture>
+    <div class="card" style="width: 18rem;" *ngFor = "let portofoliu of portofolii">
+      <img src={{portofoliu.imagine}} alt="">
       <div class="card-body">
-        <h5 class="card-title">{{ portofoliu.title }}</h5>
-        <p class="card-text">{{ portofoliu.description }}</p>
-        <app-button></app-button>
+        <h5 class="card-title">{{portofoliu.titlu}}</h5>
+        <p class="card-text">{{portofoliu.descriere}}</p>
         <app-button></app-button>
       </div>
     </div>
