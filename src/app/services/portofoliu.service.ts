@@ -3,6 +3,7 @@ import { Portofoliu } from '../shared/models/portofoliu';
 import { listaPortofolii } from '../portofolii';
 import {PORTOFOLII_URL} from '../shared/constants/urls';
 import {PORTOFOLIU_BY_ID_URL} from '../shared/constants/urls';
+import {HttpClientModule} from '@angular/comon/http'; 
 
 @Injectable({
   providedIn: 'root'
