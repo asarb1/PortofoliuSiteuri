@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Portofoliu } from '../shared/models/portofoliu';
 import { listaPortofolii } from '../portofolii';
+import {PORTOFOLII_URL} from '../shared/constants/urls';
+import {PORTOFOLIU_BY_ID_URL} from '../shared/constants/urls';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PortofoliuService {
 
-  constructor() { }
+  constructor(private http:HttpClientModule) { }
 
-  getAll():Portofoliu[] {
-    return listaPortofolii;
+  getAll():Observable<Portofoliu[]> {
+    return this.http.get<Portofoliu[]>(PORTOFOLII_URL);
   }
 
-  getPortofoliuById(id: number): Portofoliu | undefined {
-    return this.getAll().find(portofoliu => portofoliu.id === id);
+  getPortofoliuById(id: number): Observable<Portofoliu[]> | undefined {
+    return this.http.get<Portofoliu[]>(PORTOFOLIU_BY_ID_URL + id);
   }
 }
