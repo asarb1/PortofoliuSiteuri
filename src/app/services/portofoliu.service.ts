@@ -11,5 +11,8 @@ export class PortofoliuService {
   getAll():Portofoliu[] {
     return listaPortofolii;
   }
-  
+
+  getPortofoliuById(id: number): Portofoliu | undefined {
+    return this.getAll().find(portofoliu => portofoliu.id === id);
+  }
 }

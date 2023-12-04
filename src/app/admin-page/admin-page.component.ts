@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppTopBarComponent} from '../app-top-bar/app-top-bar.component';
-import { AppPortofoliuComponent} from '../app-portofoliu/app-portofoliu.component';
-import { ButtonComponent } from '../button/button.component';
+import { AppTopBarAdminComponent} from '../app-top-bar-admin/app-top-bar-admin.component';
+import { PortofoliuAdminComponent} from '../portofoliu-admin/portofoliu-admin.component';
 
 @Component({
   standalone: true,
   selector: 'app-admin-page',
-  imports: [CommonModule, AppTopBarComponent, AppPortofoliuComponent, ButtonComponent],
+  imports: [CommonModule, AppTopBarAdminComponent, PortofoliuAdminComponent],
   templateUrl: './admin-page.component.html',
   styleUrl: './admin-page.component.css'
 })

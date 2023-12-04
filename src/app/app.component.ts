@@ -10,13 +10,13 @@ import {EditPageComponent } from './edit-page/edit-page.component';
 import {HomePageComponent } from './home-page/home-page.component';
 import {LoginPageComponent } from './login-page/login-page.component';
 import {UserPageComponent } from './user-page/user-page.component';
-import {ButtonComponent } from './button/button.component';
-import {LinkComponent } from './link/link.component';
-
+import {AppTopBarAdminComponent} from './app-top-bar-admin/app-top-bar-admin.component';
+import {PortofoliuAdminComponent} from './portofoliu-admin/portofoliu-admin.component';
+import {RedarePortofoliuAdminComponent} from './redare-portofoliu-admin/redare-portofoliu-admin.component';
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, AdminPageComponent, AppPortofoliuComponent, AppRedarePortofoliuComponent, AppRegisterComponent, AppTopBarComponent, EditPageComponent, HomePageComponent, LoginPageComponent, UserPageComponent, ButtonComponent, LinkComponent],
+  imports: [CommonModule, RouterOutlet, AdminPageComponent, AppPortofoliuComponent, AppRedarePortofoliuComponent, AppRegisterComponent, AppTopBarComponent, EditPageComponent, HomePageComponent, LoginPageComponent, UserPageComponent, AppTopBarAdminComponent, PortofoliuAdminComponent, RedarePortofoliuAdminComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

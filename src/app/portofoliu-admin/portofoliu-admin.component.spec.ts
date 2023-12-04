@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LinkComponent } from './link.component';
+import { PortofoliuAdminComponent } from './portofoliu-admin.component';
 
-describe('LinkComponent', () => {
-  let component: LinkComponent;
-  let fixture: ComponentFixture<LinkComponent>;
+describe('PortofoliuAdminComponent', () => {
+  let component: PortofoliuAdminComponent;
+  let fixture: ComponentFixture<PortofoliuAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LinkComponent]
+      imports: [PortofoliuAdminComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LinkComponent);
+    fixture = TestBed.createComponent(PortofoliuAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

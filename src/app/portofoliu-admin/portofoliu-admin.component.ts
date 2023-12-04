@@ -5,15 +5,15 @@ import { PortofoliuService} from '../services/portofoliu.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
+  selector: 'app-portofoliu-admin',
   standalone: true,
-  selector: 'app-app-portofoliu',
   imports: [CommonModule, RouterModule],
-  templateUrl: './app-portofoliu.component.html',
-  styleUrl: './app-portofoliu.component.css'
+  templateUrl: './portofoliu-admin.component.html',
+  styleUrl: './portofoliu-admin.component.css'
 })
-export class AppPortofoliuComponent {
-portofolii:Portofoliu[] = [];
-constructor(private portofoliuService:PortofoliuService) {
-  this.portofolii = portofoliuService.getAll();
-}
+export class PortofoliuAdminComponent {
+  portofolii:Portofoliu[] = [];
+  constructor(private portofoliuService:PortofoliuService) {
+    this.portofolii = portofoliuService.getAll();
+  }
 }
