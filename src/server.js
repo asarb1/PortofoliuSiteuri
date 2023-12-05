@@ -76,22 +76,6 @@ app.get("/home", function(req, res){
   res.render("home");
 });
 
-app.post("/home", function(req, res){
-  bcrypt.hash(req.body.parola, saltRounds, function(err, hash){
-    const newUser = new User({
-      email: req.body.email,
-      parola: hash
-    });
-    newUser.save(function(err){
-      if(err){
-        console.log(err);
-      }else{
-        res.render("admin");
-      }
-    });
-  });
-});
-
 app.get("/user", function(req, res){
   res.render("user");
 });
@@ -106,4 +90,20 @@ app.get("/admin", function(req, res){
 
 app.get("/edit", function(req, res){
   res.render("edit");
+});
+
+app.post("/home", function(req, res){
+  bcrypt.hash(req.body.parola, saltRounds, function(err, hash){
+    const newUser = new User({
+      email: req.body.email,
+      parola: hash
+    });
+    newUser.save(function(err){
+      if(err){
+        console.log(err);
+      }else{
+        res.render("admin");
+      }
+    });
+  });
 });
