@@ -1,7 +1,9 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const findOrCreate = require("mongoose-find-or-create");
+const bcrypt = require('bcrypt');
 
 pp.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -62,8 +64,32 @@ passport.deserializeUser(function(user, cb) {
   });
 });
 
+app.use(function(req, res, next){
+  res.setHeader('Acces-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Acces-Control-Allow-Methods', 'GET', 'POST', 'OPTION', 'PUT', 'PATCH', 'DELETE');
+  res.setHeader('Acces-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Acces-Control-Allow-Credentials', true);
+  next();
+});
+
 app.get("/home", function(req, res){
   res.render("home");
+});
+
+app.post("/home", function(req, res){
+  bcrypt.hash(req.body.parola, saltRounds, function(err, hash){
+    const newUser = new User({
+      email: req.body.email,
+      parola: hash
+    });
+    newUser.save(function(err){
+      if(err){
+        console.log(err);
+      }else{
+        res.render("admin");
+      }
+    });
+  });
 });
 
 app.get("/user", function(req, res){
