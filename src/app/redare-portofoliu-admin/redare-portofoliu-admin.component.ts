@@ -2,11 +2,12 @@ import { Component, Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Imagine } from '../shared/models/imagine';
 import { ImagineService} from '../services/imagine.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-redare-portofoliu-admin',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './redare-portofoliu-admin.component.html',
   styleUrl: './redare-portofoliu-admin.component.css'
 })
