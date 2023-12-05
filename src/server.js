@@ -107,3 +107,13 @@ app.post("/home", function(req, res){
     });
   });
 });
+
+app.post("/admin", function(req, res){
+  const newPortofoliu = new Portofoliu({
+    imagine: req.body.imagine,
+    titlu: req.body.titlu,
+    descriere: req.body.descriere,
+    link: req.body.link
+  });
+  newPortofoliu.save();
+});

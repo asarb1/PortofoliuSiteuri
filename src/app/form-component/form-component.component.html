@@ -1,29 +1,31 @@
 <div class="container">
-  <form class="" action="" method="post">
+  <form class="" action="/admin" method="post">
+    <div class="row mb-3">
+      <label for="titlu" class="col-sm-2 col-form-label">Imagine</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="titlu" name="imagine">
+      </div>
+    </div>
     <div class="row mb-3">
       <label for="titlu" class="col-sm-2 col-form-label">Titlu</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="titlu">
+        <input type="text" class="form-control" id="titlu" name="titlu">
       </div>
     </div>
     <div class="row mb-3">
       <label for="descriere" class="col-sm-2 col-form-label">Descriere</label>
       <div class="col-sm-10">
-        <input type="textarea" class="form-control" id="descriere">
+        <input type="textarea" class="form-control" id="descriere" name="descriere">
       </div>
     </div>
     <div class="row mb-3">
       <label for="link" class="col-sm-2 col-form-label">Link</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="link">
+        <input type="text" class="form-control" id="link" name="link">
       </div>
     </div>
-  <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-  <input class="form-control" type="file" id="formFileMultiple" multiple>
-  </div>
   <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-primary" type="submit" href="/admin">Submit form</button>
   </div>
   </form>
 </div>
