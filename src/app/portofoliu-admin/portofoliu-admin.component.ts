@@ -1,19 +1,37 @@
 import { Component , Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Portofoliu } from '../shared/models/portofoliu';
-import { PortofoliuService} from '../services/portofoliu.service';
 import { RouterModule } from '@angular/router';
+import { Portofoliu } from 'src/app/models/portofoliu.model';
+import { PortofoliuService } from 'src/app/services/portofoliu.service';
 
 @Component({
-  selector: 'app-portofoliu-admin',
   standalone: true,
+  selector: 'app-app-portofoliu',
   imports: [CommonModule, RouterModule],
-  templateUrl: './portofoliu-admin.component.html',
-  styleUrl: './portofoliu-admin.component.css'
+  templateUrl: './app-portofoliu.component.html',
+  styleUrl: './app-portofoliu.component.css'
 })
-export class PortofoliuAdminComponent {
-  portofolii:Portofoliu[] = [];
-  constructor(private portofoliuService:PortofoliuService) {
-    this.portofolii = portofoliuService.getAll();
+export class AppPortofoliuComponent implements OnInit{
+  portofolii?: Portofoliu[];
+    currentPortofoliu: Portofoliu = {};
+    currentIndex = -1;
+    titlu = '';
+
+    constructor(private portofoliuService: PortofoliuService) { }
+
+    ngOnInit(): void {
+    this.retrievePortofolii();
   }
+
+  retrievePortofolii(): void {
+   this.portofoliuService.getAll()
+     .subscribe({
+       next: (data) => {
+         this.portofolii = data;
+         console.log(data);
+       },
+       error: (e) => console.error(e)
+     });
+ }
+
 }
