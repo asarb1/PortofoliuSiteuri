@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { listaPortofolii } from '../portofolii';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Portofoliu } from '../models/portofoliu.model';

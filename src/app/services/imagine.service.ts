@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { listaImagini } from '../imagini';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Imagine } from '../models/imagine.model';
