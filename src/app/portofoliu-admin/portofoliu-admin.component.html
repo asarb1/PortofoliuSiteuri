@@ -5,7 +5,7 @@
         <h5 class="card-title">{{portofoliu.titlu}}</h5>
         <p class="card-text">{{portofoliu.descriere}}</p>
         <a [routerLink]="['/edit', portofoliu.id]">Learn More</a>
-        <button type="button" name="button" class="btn btn-warning">Delete</button>
+        <button type="button" name="button" action="/admin" method="DELETE" class="btn btn-warning" routerLink="/admin">Delete</button>
       </div>
     </div>
 </div>

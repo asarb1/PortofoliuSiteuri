@@ -2,7 +2,7 @@
   <div class="card" style="width: 18rem;" *ngFor = "let imagine of imagini">
     <img src={{imagine.src}} class="d-block w-100 c-img" alt={{imagine.alt}}>
     <div class="card-body">
-      <a class="btn btn-warning" routerLink="/edit">Delete</a>
+      <a class="btn btn-warning" action="/edit:id" method="Delete" routerLink="/edit">Delete</a>
     </div>
   </div>
 </div>

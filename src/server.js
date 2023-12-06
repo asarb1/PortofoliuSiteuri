@@ -125,3 +125,15 @@ alt: req.body.alt
 });
 newImagine.save();
 });
+
+app.delete("/admin", function(req, res){
+  Portofoliu.deleteOne({ id: req.body.id}).then((result) => {
+    console.log(result);
+});
+});
+
+app.delete("/edit:id", function(req, res){
+  Portofoliu.deleteOne({ id: req.body.id}).then((result) => {
+    console.log(result);
+});
+});
