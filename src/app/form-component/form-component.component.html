@@ -1,31 +1,57 @@
-<div class="container">
-  <form class="" action="/admin" method="post">
-    <div class="row mb-3">
-      <label for="titlu" class="col-sm-2 col-form-label">Imagine</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="titlu" name="imagine">
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="imagine">Imagine</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imagine"
+          required
+          [(ngModel)]="portofoliu.imagine"
+          name="imagine"
+        />
       </div>
-    </div>
-    <div class="row mb-3">
-      <label for="titlu" class="col-sm-2 col-form-label">Titlu</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="titlu" name="titlu">
+
+      <div class="form-group">
+        <label for="description">Titlu</label>
+        <input
+          class="form-control"
+          id="titlu"
+          required
+          [(ngModel)]="portofoliu.titlu"
+          name="titlu"
+        />
       </div>
-    </div>
-    <div class="row mb-3">
-      <label for="descriere" class="col-sm-2 col-form-label">Descriere</label>
-      <div class="col-sm-10">
-        <input type="textarea" class="form-control" id="descriere" name="descriere">
+
+      <div class="form-group">
+        <label for="description">Descriere</label>
+        <input
+          class="form-control"
+          id="descriere"
+          required
+          [(ngModel)]="portofoliu.descriere"
+          name="descriere"
+        />
       </div>
-    </div>
-    <div class="row mb-3">
-      <label for="link" class="col-sm-2 col-form-label">Link</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="link" name="link">
+
+      <div class="form-group">
+        <label for="description">Link</label>
+        <input
+          class="form-control"
+          id="link"
+          required
+          [(ngModel)]="portofoliu.link"
+          name="link"
+        />
       </div>
+
+      <button (click)="savePortofoliu()" class="btn btn-success">Submit</button>
     </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit" routerLink="/admin">Submit form</button>
+
+    <div *ngIf="submitted">
+      <h4>Portofoliu salvat!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    </div>
   </div>
-  </form>
 </div>
