@@ -117,3 +117,11 @@ app.post("/admin", function(req, res){
   });
   newPortofoliu.save();
 });
+
+app.post("/edit:id", function(req, res){
+const newImagine = new Imagine({
+src: req.body.src,
+alt: req.body.alt
+});
+newImagine.save();
+});
