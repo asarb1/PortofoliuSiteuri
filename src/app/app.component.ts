@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {AdminPageComponent } from './admin-page/admin-page.component';
@@ -16,7 +19,7 @@ import {RedarePortofoliuAdminComponent} from './redare-portofoliu-admin/redare-p
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, AdminPageComponent, AppPortofoliuComponent, AppRedarePortofoliuComponent, AppRegisterComponent, AppTopBarComponent, EditPageComponent, HomePageComponent, LoginPageComponent, UserPageComponent, AppTopBarAdminComponent, PortofoliuAdminComponent, RedarePortofoliuAdminComponent],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterOutlet, AdminPageComponent, AppPortofoliuComponent, AppRedarePortofoliuComponent, AppRegisterComponent, AppTopBarComponent, EditPageComponent, HomePageComponent, LoginPageComponent, UserPageComponent, AppTopBarAdminComponent, PortofoliuAdminComponent, RedarePortofoliuAdminComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

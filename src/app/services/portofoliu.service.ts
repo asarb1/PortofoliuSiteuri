@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Portofoliu } from '../shared/models/portofoliu';
 import { listaPortofolii } from '../portofolii';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Portofoliu } from '../models/portofoliu.model';
 
+const baseUrl = 'http://localhost:8080/api/portofoliu';
 @Injectable({
   providedIn: 'root'
 })
 export class PortofoliuService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAll():Portofoliu[] {
-    return listaPortofolii;
+  create(data: any): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
-  getPortofoliuById(id: number):Portofoliu | undefined {
-    return this.getAll().find(portofoliu => portofoliu.id === id);
+  get(id: any): Observable<Portofoliu> {
+    return this.http.get(`${baseUrl}/${id}`);
   }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
+
 }
