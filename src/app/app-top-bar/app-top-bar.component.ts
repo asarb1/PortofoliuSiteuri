@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
-
 @Component({
   standalone: true,
   selector: 'app-app-top-bar',

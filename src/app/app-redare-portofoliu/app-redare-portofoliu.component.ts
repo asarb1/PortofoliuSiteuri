@@ -1,7 +1,8 @@
 import { Component, Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Imagine } from 'src/app/models/imagine.model';
-import { ImagineService } from 'src/app/services/imagine.service';
+import { Imagine } from '../models/imagine.model';
+import { ImagineService } from '../services/imagine.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   standalone: true,

@@ -4,4 +4,5 @@ imagine?: String;
 titlu?: String;
 descriere?: String;
 link?: String;
+published?: boolean;
 }

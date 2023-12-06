@@ -1,16 +1,17 @@
 import { Component, Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Imagine } from 'src/app/models/imagine.model';
-import { ImagineService } from 'src/app/services/imagine.service';
+import { Imagine } from '../models/imagine.model';
+import { ImagineService } from '../services/imagine.service';
+import {OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'app-app-redare-portofoliu',
+  selector: 'app-redare-portofoliu-admin',
   imports: [CommonModule],
-  templateUrl: './app-redare-portofoliu.component.html',
-  styleUrl: './app-redare-portofoliu.component.css'
+  templateUrl: './redare-portofoliu-admin.component.html',
+  styleUrl: './redare-portofoliu-admin.component.css'
 })
-export class AppRedarePortofoliuComponent implements OnInit{
+export class RedarePortofoliuAdminComponent implements OnInit{
   imagini?: Imagine[];
   currentImagine: Imagine = {};
   currentIndex = -1;

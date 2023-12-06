@@ -1,17 +1,18 @@
 import { Component , Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Portofoliu } from 'src/app/models/portofoliu.model';
-import { PortofoliuService } from 'src/app/services/portofoliu.service';
+import { Portofoliu } from '../models/portofoliu.model';
+import { PortofoliuService } from '../services/portofoliu.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'app-app-portofoliu',
+  selector: 'app-portofoliu-admin',
   imports: [CommonModule, RouterModule],
-  templateUrl: './app-portofoliu.component.html',
-  styleUrl: './app-portofoliu.component.css'
+  templateUrl: './portofoliu-admin.component.html',
+  styleUrl: './portofoliu-admin.component.css'
 })
-export class AppPortofoliuComponent implements OnInit{
+export class PortofoliuAdminComponent implements OnInit{
   portofolii?: Portofoliu[];
     currentPortofoliu: Portofoliu = {};
     currentIndex = -1;

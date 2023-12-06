@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {AdminPageComponent } from './admin-page/admin-page.component';
 import {AppPortofoliuComponent } from './app-portofoliu/app-portofoliu.component';

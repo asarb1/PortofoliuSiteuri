@@ -11,6 +11,10 @@ export class PortofoliuService {
 
   constructor(private http: HttpClient) { }
 
+  getAll(): Observable<Portofoliu[]> {
+    return this.http.get<Portofoliu[]>(baseUrl);
+  }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }

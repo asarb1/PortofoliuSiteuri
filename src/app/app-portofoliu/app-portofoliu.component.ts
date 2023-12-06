@@ -1,8 +1,9 @@
 import { Component , Input, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Portofoliu } from 'src/app/models/portofoliu.model';
-import { PortofoliuService } from 'src/app/services/portofoliu.service';
+import { Portofoliu } from '../models/portofoliu.model';
+import { PortofoliuService } from '../services/portofoliu.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
