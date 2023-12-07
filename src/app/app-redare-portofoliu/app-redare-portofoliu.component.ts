@@ -21,13 +21,11 @@ export class AppRedarePortofoliuComponent implements OnInit{
   constructor(private imagineService: ImagineService) { }
 
   ngOnInit(): void {
-    if (!this.viewMode) {
     this.retrieveImagine();
   }
-  }
 
-  retrieveImagine(id: string): void {
-    this.imagineService.get(id)
+  retrieveImagine(): void {
+    this.imagineService.getAll()
       .subscribe({
         next: (data) => {
           this.imagini = data;

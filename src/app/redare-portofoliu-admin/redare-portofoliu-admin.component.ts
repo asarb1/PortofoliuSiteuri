@@ -18,36 +18,39 @@ export class RedarePortofoliuAdminComponent implements OnInit{
   currentIndex = -1;
 
 
-  constructor(private imagineService: ImagineService, private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private imagineService: ImagineService) { }
 
   ngOnInit(): void {
-    if (!this.viewMode) {
-      this.retrieveImagine(this.route.snapshot.params["id"]);
-    }
+      this.retrieveImagine();
   }
 
-  retrieveImagine(id: string): void {
-    this.imagineService.get(id)
+  retrieveImagine(): void {
+    this.imagineService.getAll1()
       .subscribe({
         next: (data) => {
-          this.currentImagine = data;
+          this.imagini = data;
           console.log(data);
         },
         error: (e) => console.error(e)
       });
   }
 
+
   deleteImagine(): void {
     this.imagineService.delete(this.currentImagine.id)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/admin']);
+          this.refreshList();
         },
         error: (e) => console.error(e)
       });
   }
 
+  refreshList(): void {
+    this.retrieveImagine();
+    this.currentImagine = {};
+    this.currentIndex = -1;
+  }
 
 }

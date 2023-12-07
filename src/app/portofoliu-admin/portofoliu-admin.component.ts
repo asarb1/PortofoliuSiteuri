@@ -18,8 +18,7 @@ export class PortofoliuAdminComponent implements OnInit{
     currentIndex = -1;
     titlu = '';
 
-    constructor(private portofoliuService: PortofoliuService, private route: ActivatedRoute,
-    private router: Router) { }
+    constructor(private portofoliuService: PortofoliuService) { }
 
     ngOnInit(): void {
     this.retrievePortofolii();
@@ -37,7 +36,7 @@ export class PortofoliuAdminComponent implements OnInit{
  }
 
  removePortofolii(): void {
-    this.portofoliuService.delete(this.portofolii)
+    this.portofoliuService.delete(this.currentPortofoliu.id)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -48,8 +47,8 @@ export class PortofoliuAdminComponent implements OnInit{
   }
 
   refreshList(): void {
-    this.retrieveTutorials();
-    this.currentTutorial = {};
+    this.retrievePortofolii();
+    this.currentPortofoliu = {};
     this.currentIndex = -1;
   }
 

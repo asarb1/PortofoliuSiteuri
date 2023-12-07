@@ -6,11 +6,12 @@ import { OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {NgIf} from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form-edit',
   standalone: true,
-  imports: [RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, CommonModule],
   providers:[ImagineService],
   templateUrl: './form-edit.component.html',
   styleUrl: './form-edit.component.css'
