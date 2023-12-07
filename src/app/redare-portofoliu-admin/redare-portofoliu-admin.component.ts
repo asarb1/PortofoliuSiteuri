@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Imagine } from '../models/imagine.model';
 import { ImagineService } from '../services/imagine.service';
 import {OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -12,23 +13,40 @@ import {OnInit } from '@angular/core';
   styleUrl: './redare-portofoliu-admin.component.css'
 })
 export class RedarePortofoliuAdminComponent implements OnInit{
-  imagini?: Imagine[];
-  currentImagine: Imagine = {};
-  currentIndex = -1;
-  src = '';
+  @Input() viewMode = false;
 
-  constructor(private imagineService: ImagineService) { }
+  @Input() currentImagine: Imagine = {
+    src: '',
+    alt: '',
+    published: false
+  };
+
+  constructor(private imagineService: ImagineService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.retrieveImagine();
+    if (!this.viewMode) {
+      this.retrieveImage(this.route.snapshot.params["id"]);
+    }
   }
 
-  retrieveImagine(): void {
-    this.imagineService.getAll1()
+  retrieveImagine(id: string): void {
+    this.imagineService.get(id)
       .subscribe({
         next: (data) => {
-          this.imagini = data;
+          this.currentImagine = data;
           console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  deleteImagine(): void {
+    this.imagineService.delete(this.currentImagine.id)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.router.navigate(['/admin']);
         },
         error: (e) => console.error(e)
       });

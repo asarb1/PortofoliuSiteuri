@@ -18,7 +18,15 @@ export class PortofoliuAdminComponent implements OnInit{
     currentIndex = -1;
     titlu = '';
 
-    constructor(private portofoliuService: PortofoliuService) { }
+    @Input() currentImagine: Imagine = {
+      src: '',
+      alt: '',
+      published: false
+    };
+
+
+    constructor(private portofoliuService: PortofoliuService, private route: ActivatedRoute,
+    private router: Router) { }
 
     ngOnInit(): void {
     this.retrievePortofolii();
@@ -34,5 +42,16 @@ export class PortofoliuAdminComponent implements OnInit{
        error: (e) => console.error(e)
      });
  }
+
+ removePortofolii(): void {
+    this.portofoliuService.delete(this.currentPortofoliu)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.refreshList();
+        },
+        error: (e) => console.error(e)
+      });
+  }
 
 }

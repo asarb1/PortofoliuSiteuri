@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Imagine } from '../models/imagine.model';
 import { ImagineService } from '../services/imagine.service';
 import { OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -12,22 +13,30 @@ import { OnInit } from '@angular/core';
   styleUrl: './app-redare-portofoliu.component.css'
 })
 export class AppRedarePortofoliuComponent implements OnInit{
-  imagini?: Imagine[];
-  currentImagine: Imagine = {};
-  currentIndex = -1;
-  src = '';
 
-  constructor(private imagineService: ImagineService) { }
+  @Input() viewMode = false;
+
+
+  @Input() currentImagine: Imagine = {
+    title: '',
+    description: '',
+    published: false
+  };
+
+  constructor(private imagineService: ImagineService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.retrieveImagine();
+    if (!this.viewMode) {
+      this.retrieveImagine(this.route.snapshot.params["id"]);
+    }
   }
 
-  retrieveImagine(): void {
-    this.imagineService.getAll1()
+  retrieveImagine(id: string): void {
+    this.imagineService.get(id)
       .subscribe({
         next: (data) => {
-          this.imagini = data;
+          this.currentImagine = data;
           console.log(data);
         },
         error: (e) => console.error(e)

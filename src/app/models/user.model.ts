@@ -1,5 +1,5 @@
 export class User {
-id?: Number;
-email?: String;
-parola?: String;
+id?: any;
+email?: string;
+parola?: string;
 }

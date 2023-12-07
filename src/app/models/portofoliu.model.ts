@@ -1,8 +1,8 @@
 export class Portofoliu {
-id?: Number;
-imagine?: String;
-titlu?: String;
-descriere?: String;
-link?: String;
+id?: any;
+imagine?: string;
+titlu?: string;
+descriere?: string;
+link?: string;
 published?: boolean;
 }
