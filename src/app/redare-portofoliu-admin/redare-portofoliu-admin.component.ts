@@ -26,7 +26,7 @@ export class RedarePortofoliuAdminComponent implements OnInit{
 
   ngOnInit(): void {
     if (!this.viewMode) {
-      this.retrieveImage(this.route.snapshot.params["id"]);
+      this.retrieveImagine(this.route.snapshot.params["id"]);
     }
   }
 

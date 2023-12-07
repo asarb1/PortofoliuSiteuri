@@ -18,13 +18,6 @@ export class PortofoliuAdminComponent implements OnInit{
     currentIndex = -1;
     titlu = '';
 
-    @Input() currentImagine: Imagine = {
-      src: '',
-      alt: '',
-      published: false
-    };
-
-
     constructor(private portofoliuService: PortofoliuService, private route: ActivatedRoute,
     private router: Router) { }
 
@@ -44,7 +37,7 @@ export class PortofoliuAdminComponent implements OnInit{
  }
 
  removePortofolii(): void {
-    this.portofoliuService.delete(this.currentPortofoliu)
+    this.portofoliuService.delete(this.portofolii)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -52,6 +45,12 @@ export class PortofoliuAdminComponent implements OnInit{
         },
         error: (e) => console.error(e)
       });
+  }
+
+  refreshList(): void {
+    this.retrieveTutorials();
+    this.currentTutorial = {};
+    this.currentIndex = -1;
   }
 
 }
