@@ -25,7 +25,7 @@ export class PortofoliuAdminComponent implements OnInit{
   }
 
   retrievePortofolii(): void {
-   this.portofoliuService.getAll()
+   this.portofoliuService.getAll1()
      .subscribe({
        next: (data) => {
          this.portofolii = data;

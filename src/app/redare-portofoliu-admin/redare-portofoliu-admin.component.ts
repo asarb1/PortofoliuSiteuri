@@ -24,7 +24,7 @@ export class RedarePortofoliuAdminComponent implements OnInit{
   }
 
   retrieveImagine(): void {
-    this.imagineService.getAll()
+    this.imagineService.getAll1()
       .subscribe({
         next: (data) => {
           this.imagini = data;
