@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Portofoliu } from '../models/portofoliu.model';
 
-const baseUrl = 'http://localhost:8080/api/home';
-const baseUrl1 = 'http://localhost:8080/api/admin';
+const baseUrl = 'http://localhost:8080/api/home/';
+const baseUrl1 = 'http://localhost:8080/api/admin/';
 
 @Injectable({
   providedIn: 'root'

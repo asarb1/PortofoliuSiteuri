@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Imagine } from '../models/imagine.model';
 
-const baseUrl2 = 'http://localhost:8080/api/user';
-const baseUrl4 = 'http://localhost:8080/api/edit';
+const baseUrl2 = 'http://localhost:8080/api/user/';
+const baseUrl4 = 'http://localhost:8080/api/edit/';
 @Injectable({
   providedIn: 'root'
 })
