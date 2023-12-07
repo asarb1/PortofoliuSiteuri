@@ -14,29 +14,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppRedarePortofoliuComponent implements OnInit{
 
-  @Input() viewMode = false;
+  imagini?: Imagine[];
+  currentImagine: Imagine = {};
+  currentIndex = -1;
 
-
-  @Input() currentImagine: Imagine = {
-    title: '',
-    description: '',
-    published: false
-  };
-
-  constructor(private imagineService: ImagineService, private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private imagineService: ImagineService) { }
 
   ngOnInit(): void {
     if (!this.viewMode) {
-      this.retrieveImagine(this.route.snapshot.params["id"]);
-    }
+    this.retrieveImagine();
+  }
   }
 
   retrieveImagine(id: string): void {
     this.imagineService.get(id)
       .subscribe({
         next: (data) => {
-          this.currentImagine = data;
+          this.imagini = data;
           console.log(data);
         },
         error: (e) => console.error(e)

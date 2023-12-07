@@ -13,13 +13,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './redare-portofoliu-admin.component.css'
 })
 export class RedarePortofoliuAdminComponent implements OnInit{
-  @Input() viewMode = false;
+  imagini?: Imagine[];
+  currentImagine: Imagine = {};
+  currentIndex = -1;
 
-  @Input() currentImagine: Imagine = {
-    src: '',
-    alt: '',
-    published: false
-  };
 
   constructor(private imagineService: ImagineService, private route: ActivatedRoute,
     private router: Router) { }
